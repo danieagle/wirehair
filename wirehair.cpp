@@ -26,7 +26,7 @@
     POSSIBILITY OF SUCH DAMAGE.
 */
 
-#include "wirehair.h"
+#include <wirehair/wirehair.h>
 #include "WirehairCodec.h"
 
 #include <new> // std::nothrow
@@ -153,7 +153,7 @@ WIREHAIR_EXPORT WirehairCodec wirehair_decoder_create(
 )
 {
     // If input is invalid:
-    if (messageBytes < 1 || blockBytes < 1) {
+    if (!m_init || messageBytes < 1 || blockBytes < 1) {
         return nullptr;
     }
 
