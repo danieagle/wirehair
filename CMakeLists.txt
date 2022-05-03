@@ -74,7 +74,7 @@ if(MARCH_NATIVE)
     set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=native")
 endif()
 
-add_library(wirehair ${LIB_SOURCE_FILES})
+add_library(wirehair SHARED ${LIB_SOURCE_FILES})
 set_target_properties(wirehair PROPERTIES VERSION 2)
 set_target_properties(wirehair PROPERTIES SOVERSION 2)
 target_include_directories(wirehair PUBLIC ${PROJECT_SOURCE_DIR}/include)
